@@ -1,0 +1,254 @@
+<section class="new_task mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <h2>New Task</h2>
+        </div>
+      </div>
+      <div class="col-md-12 pt-3">
+        <form [formGroup]="taskForm" (ngSubmit)="formSubmit()">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="form-floating calender-icon d-flex">
+                <input
+                  type="date"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                  formControlName="duedate"
+                  [min]="today"
+                />
+                <label for="floatingInput">Due Date</label>
+               <img src="../../assets/calender.png" class="foldername" />
+                
+              </div>
+              <div *ngIf="submitted && f.duedate.errors">
+                <div *ngIf="f.duedate.errors.required" class="error">Date feild is required</div>
+             </div>
+             
+            </div>
+            <div class="col-md-4">
+              <div class="form-check mb-4">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                  formControlName="project_filter"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  Project Date Filter 30+/-
+                </label>
+                <div *ngIf="submitted && f.project_filter.errors">
+                    <div *ngIf="f.project_filter.errors.required" class="error">Project Date feild is required</div>
+                 </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                  formControlName="createdby"
+                />
+                <label for="floatingInput">Created By</label>
+                <div *ngIf="submitted && f.createdby.errors">
+                    <div *ngIf="f.createdby.errors.required" class="error">Created feild is required</div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-floating mb-4">
+                <ngx-select
+                  [items]="items"
+                  class="form-control"
+                  id="floatingInput"
+                  formControlName="client"
+
+                ></ngx-select>
+                <label for="floatingInput">Client</label>
+                <div *ngIf="submitted && f.client.errors">
+                    <div *ngIf="f.client.errors.required" class="error">client feild is required</div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <div class="form-floating d-flex ">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                  formControlName="project"
+
+                />
+                <label for="floatingInput">Project</label>
+                <img src="../../assets/folder.png" class="foldername" />
+               
+              </div>
+              <div *ngIf="submitted && f.project.errors">
+                <div *ngIf="f.project.errors.required" class="error">project feild is required</div>
+             </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12  mb-4">
+              <div class="form-floating d-flex">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                  formControlName="task"
+
+                />
+                <label for="floatingInput">Task</label>
+                <img src="../../assets/create.png" class="foldername" />
+              </div>
+              <div *ngIf="submitted && f.task.errors">
+                <div *ngIf="f.task.errors.required" class="error">task feild is required</div>
+             </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-floating mb-4">
+                <ngx-select
+                  [items]="items1"
+                  class="form-control"
+                  id="floatingInput"
+                  formControlName="status"
+                ></ngx-select>
+                <label for="floatingInput">Status</label>
+                <div *ngIf="submitted && f.status.errors">
+                    <div *ngIf="f.status.errors.required" class="error">status feild is required</div>
+                 </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating mb-4">
+                <ngx-select
+                  [items]="items"
+                  class="form-control"
+                  id="floatingInput"
+                  formControlName="assignee"
+
+                ></ngx-select>
+                <label for="floatingInput">Assignee</label>
+                <div *ngIf="submitted && f.assignee.errors">
+                    <div *ngIf="f.assignee.errors.required" class="error">assignee feild is required</div>
+                 </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefaultone"
+                  formControlName="send_email"
+
+                />
+                <label class="form-check-label" for="flexCheckDefaultone">
+                  Send Email
+                </label>
+                <div *ngIf="submitted && f.send_email.errors">
+                    <div *ngIf="f.send_email.errors.required" class="error">Send feild is required</div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-floating mb-4">
+                <ngx-select
+                  [items]="items3"
+                  class="form-control"
+                  id="floatingInput"
+                  formControlName="task_type"
+
+                ></ngx-select>
+                <label for="floatingInput">Task Type</label>
+                <div *ngIf="submitted && f.task_type.errors">
+                    <div *ngIf="f.task_type.errors.required" class="error">task feild is required</div>
+                 </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-floating mb-4">
+                <ngx-select
+                  [items]="items4"
+                  class="form-control"
+                  id="floatingInput"
+                  formControlName="priority"
+                ></ngx-select>
+                <label for="floatingInput">Priority</label>
+                <div *ngIf="submitted && f.priority.errors">
+                    <div *ngIf="f.priority.errors.required" class="error">priority feild is required</div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                  formControlName="notes"
+                ></textarea>
+                <label for="floatingTextarea2">Notes</label>
+                <div *ngIf="submitted && f.notes.errors">
+                    <div *ngIf="f.notes.errors.required" class="error">notes feild is required</div>
+                 </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                  formControlName="email_notes"
+
+                ></textarea>
+                <label for="floatingTextarea2">Email Notes</label>
+                <div *ngIf="submitted && f.email_notes.errors">
+                    <div *ngIf="f.email_notes.errors.required" class="error">email notes feild is required</div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 text-end">
+                <div class="buttons-same">
+                    <button class="same-btn">Save & Add Task</button>
+                    <button class="same-btn">Save & Add Pitch/Hit</button>
+                    <button class="same-btn">Cancel</button>
+                    <button class="same-btn diff-btn" type="submit">Save</button>
+                </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

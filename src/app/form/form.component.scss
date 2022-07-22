@@ -1,0 +1,116 @@
+.title{
+    h2{
+        font-size: 24px;
+        font-weight: 500;
+        color: #222;
+    }
+}
+
+.form-floating>.form-control, .form-floating>.form-select {
+    height: 40px;
+    padding: 10px;
+    line-height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.form-floating>label{
+    top: 7px;
+    padding: 0px 10px;
+    font-size: 14px;
+    height: inherit;
+    width: auto;
+}
+
+.form-floating>.form-control:focus~label, .form-floating>.form-control:not(:placeholder-shown)~label, .form-floating>.form-select~label {
+    opacity: 1;
+    transform: scale(.85) translateY(-1.2rem) translateX(0.15rem);
+    background: #fff;
+    padding: 0 5px !important;
+    color: #979595;
+}
+.form-control:focus{
+    box-shadow: none;
+    background-color: #fff;
+}
+.form-check input {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+}
+label.form-check-label {
+    margin-top: 5px;
+    font-size: 14px;
+}
+.form-check-input:focus{
+    box-shadow: none;
+}
+img.foldername {
+    width: 100%;
+    max-width: 40px;
+    margin-left: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+button.same-btn {
+    border: 1px solid #ced4da;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: gray;
+    background: transparent;
+    font-weight: 500;
+    padding: 6px 15px;
+    border-radius: 6px;
+}
+button.same-btn.diff-btn {
+    background: #8c0c04;
+    color: #fff;
+    border-color: #8c0c04;
+}
+.form-floating label{
+    opacity: 1;
+    transform: scale(0.85) translateY(-1.2rem) translateX(0.15rem);
+    background: #fff;
+    padding: 0 5px !important;
+    color: #979595;
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+    text-transform: capitalize;
+}
+.form-check .form-check-input{
+    margin-left: 0;
+}
+.form-check{
+    padding-left: 0;
+}
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    // display: none;
+    opacity: 0;
+    -webkit-appearance: none;
+    position: absolute;
+    right: -4px;
+    top: -8px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    pointer-events: all;
+}
+.calender-icon input{
+    pointer-events: all;
+}
+.calender-icon img.foldername {
+    pointer-events: none;
+}
+@media screen and (max-width: 480px) {
+    button.same-btn {
+        margin-left: 12px;
+        margin-bottom: 20px;
+        padding: 5px 12px;
+    }
+  }
